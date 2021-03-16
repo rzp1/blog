@@ -23,7 +23,7 @@
 10. Rem方案和vw方案优缺点 
 11. 
 
-## 浏览器
+## 浏览器 
 1. 重绘 重排
 2. DOM Tree是如何构建的
 3. 同源策略
@@ -33,6 +33,7 @@
 7. 浏览器如何解析css选择器？
 8. Web Worker
 9. Service workers
+
 
 ## javascript 基础
 1. 变量提升
@@ -57,6 +58,7 @@
 20. 手写new 
 21. 手写 event bus
 22. 手写 promise
+23. js bridge 通讯原理
 
 
 ## Vue
@@ -78,8 +80,12 @@
 
 ## React
 
-1. hook
-2. 
+1. hook 常用
+2. fiber
+3. useState 怎么做缓存
+4. 怎么解决 useState 闭包问题
+5. userReducer 和 redux 好在哪
+6. redux 和 mobx
 
 ## 网络
 1. HTTP 1.0 http 1.1 http 2.0 区别
@@ -92,6 +98,8 @@
 8. dns 解析
 9. tcp 3次握手 4次挥手
 10. CDN 应用场景 回源
+11. tcp udp
+12. 服务为什么用ip 不用域名
 
 ## 工程化
 
@@ -136,7 +144,8 @@
 1. 
 
 ## 算法
-1. 
+1. 求数组里面最大连续项的合
+2. 两个大数相加
 
 ## 设计模式
 
@@ -153,3 +162,4 @@
 4. 如何看待前后端
 5. 微前端 理解 与实战
 6. 
+
