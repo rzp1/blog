@@ -8,7 +8,7 @@
 8. Flex - grid
 9. 1px问题
 10. Rem方案和vw方案优缺点 
-11. 重绘 重排
+11. 重绘（repaint） 重排/回流(reflow)
 
 
 ## 1.盒模型
