@@ -319,6 +319,25 @@ function type(obj) {
 
 # [21.Webworker](./javascript/21.Webworker.md)
 
+# 22.AST
+> https://segmentfault.com/a/1190000016231512
+
+抽象语法树 (Abstract Syntax Tree)，是将代码逐字母解析成 树状对象 的形式。这是语言之间的转换、代码语法检查，代码风格检查，代码格式化，代码高亮，代码错误提示，代码自动补全等等的基础。例如:
+
+```Javascript
+const code = `function square(n){
+    return n * n
+  }`;
+console.log(recast.parse(code).program.body[0])
+```
+通过解析转化成的AST如下图:
+
+<img src="./images/1625553973604.jpg">
+
+- babel编译原理
+  - babylon 将 ES6/ES7 代码解析成 AST
+  - babel-traverse 对 AST 进行遍历转译，得到新的 AST
+  - 新 AST 通过 babel-generator 转换成 ES
 # 23.数组
 
 - map: 遍历数组，返回回调返回值组成的新数组
