@@ -58,12 +58,24 @@
 - [ ] 28.JS bridge
 - [ ] 29.event bus
 ## 浏览器 
-- [ ] 1. DOM Tree是如何构建的
-- [ ] 2. 同源策略
-- [ ] 3. 如何实现跨域？
-- [ ] 4. 即时通讯
-- [ ] 5. 从 输入url到页面展示 发生了什么
-- [ ] 6. 浏览器如何解析css选择器？
+- [x] 1. DOM Tree是如何构建的
+- [x] 2. 同源策略 & 如何实现跨域？
+- [x] 3. 从 输入url到页面展示 发生了什么
+- [x] 4. 即时通讯
+## 网络
+1. HTTP 1.0 http 1.1 http 2.0 区别
+2. GET POST HEAD OPTIONS, PUT, DELETE, TRACE 和 CONNECT 区别
+3. http 请求报文 响应报文
+4. http 状态码
+5. http keep-alive
+6. http https 区别
+7. http 缓存 强缓存 协商缓存
+8. dns 解析
+9. tcp 3次握手 4次挥手
+10. CDN 应用场景 回源
+11. tcp udp
+12. 服务为什么用ip 不用域名
+13. 什么是反向代理？
 ## Vue
 1. mvvm 的理解 mvc区别
 2. 虚拟dom好处
@@ -89,20 +101,6 @@
 4. 怎么解决 useState 闭包问题
 5. userReducer 和 redux 好在哪
 6. redux 和 mobx
-
-## 网络
-1. HTTP 1.0 http 1.1 http 2.0 区别
-2. GET POST HEAD OPTIONS, PUT, DELETE, TRACE 和 CONNECT 区别
-3. http 请求报文 响应报文
-4. http 状态码
-5. http keep-alive
-6. http https 区别
-7. http 缓存 强缓存 协商缓存
-8. dns 解析
-9. tcp 3次握手 4次挥手
-10. CDN 应用场景 回源
-11. tcp udp
-12. 服务为什么用ip 不用域名
 
 ## 工程化
 
