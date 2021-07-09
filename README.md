@@ -63,19 +63,21 @@
 - [x] 3. 从 输入url到页面展示 发生了什么
 - [x] 4. 即时通讯
 ## 网络
-1. HTTP 1.0 http 1.1 http 2.0 区别
-2. GET POST HEAD OPTIONS, PUT, DELETE, TRACE 和 CONNECT 区别
-3. http 请求报文 响应报文
-4. http 状态码
-5. http keep-alive
-6. http https 区别
-7. http 缓存 强缓存 协商缓存
-8. dns 解析
-9. tcp 3次握手 4次挥手
-10. CDN 应用场景 回源
-11. tcp udp
-12. 服务为什么用ip 不用域名
-13. 什么是反向代理？
+- [x] 1. dns 解析
+- [x] 2. tcp udp
+- [x] 3. tcp 3次握手 4次挥手
+- [x] 4. HTTP 1.0 http 1.1 http 2.0 区别
+- [x] 5. http和https
+- [x] 6. GET POST HEAD OPTIONS, PUT, DELETE, TRACE 和 CONNECT 区别
+- [ ] 7. http 请求报文 响应报文
+- [x] 8. http 状态码
+- [ ] 9. http 缓存 强缓存 协商缓存
+- [x] 10. CDN 应用场景 回源
+- [x] 11. 什么是反向代理？
+## 安全
+1. XSS
+2. CSRF
+3. 
 ## Vue
 1. mvvm 的理解 mvc区别
 2. 虚拟dom好处
@@ -150,10 +152,6 @@
 
 ## 设计模式
 
-## 安全
-1. XSS
-2. CSRF
-3. 
 
 ## 业务/其他
 
