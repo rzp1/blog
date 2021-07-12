@@ -71,7 +71,7 @@
 - [x] 6. GET POST HEAD OPTIONS, PUT, DELETE, TRACE 和 CONNECT 区别
 - [ ] 7. http 请求报文 响应报文
 - [x] 8. http 状态码
-- [ ] 9. http 缓存 强缓存 协商缓存
+- [x] 9. http 缓存 强缓存 协商缓存
 - [x] 10. CDN 应用场景 回源
 - [x] 11. 什么是反向代理？
 ## 安全
