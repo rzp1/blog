@@ -79,26 +79,24 @@
 2. CSRF
 3. 
 ## Vue
-1. mvvm 的理解 mvc区别
-2. 生命周期
-3. vm.$set()
-4. nextTick & Vue的数据为什么频繁变化但只会更新一次
-5. 虚拟dom
-6. 虚拟dom
-7. diff 算法
-8. vue3 理解 proxy defineProperty
-9. vuex 理解 如何实现
-10. 组件通讯的六种方式
-11. computed/ watch 区别 实现
-12. 和 react比较
-13. vue-cli npm 包
-14. key 怎么用 为什么
-15. 前端路由实现 两种方案
-16. extend 写个toast
-17. 路由权限 实现
-18. Vue3 相关
-19. keep-alive 实现原理
-20. Nuxt SSR 的实现原理?
+- [x] 1. mvvm 的理解 mvc区别
+- [x] 2. 生命周期
+- [x] 3. vm.$set()
+- [ ] 4. nextTick & Vue的数据为什么频繁变化但只会更新一次
+- [x] 5. 虚拟dom
+- [x] 6. diff 算法
+- [x] 7. vue3 理解 proxy defineProperty
+- [x] 8. 组件通讯的六种方式
+- [x] 9. 前端路由实现 两种方案
+- [x] 10. 路由权限 实现
+- [ ] 11. vuex 理解 如何实现
+- [ ] 12. computed/ watch 区别 实现
+- [ ] 13. keep-alive 实现原理
+- [ ] 14. vue-cli npm 包
+- [ ] 15. extend 写个toast
+- [ ] 16. Vue3 相关
+- [ ] 17. Nuxt SSR 的实现原理?
+- [ ] 18. 和 react 比较
 
 
 ## React
