@@ -21,7 +21,7 @@
     - update 为了`observer`-`notify` 里面调用所有的update
 
 - 源码
-  - 收集过程`wather和dep是互相引用关系`wather里面有deps, dep里面有wathers
+  - 依赖收集 (`wather和dep是互相引用关系`wather里面有deps, dep里面有wathers)
     1. 渲染 new Watcher阶段
       ```Javascript
         updateComponent = () => {
@@ -41,7 +41,7 @@
       ```Javascript
         vm._update(vm._render(), hydrating)
       ```
-    5. `getter` 上都持有一个de
+    5. `getter` 上都持有一个 `dep`
       ```Javascript
         if (Dep.target) {
           dep.depend()
@@ -50,7 +50,20 @@
     6. `Dep.target.addDep(this:dep)`, target目前是watcher，去watcher那看看
     7. `dep.addSub(this:watcher)`,watcher入栈
     8. cleanupDeps 如果newDeps里面没有, 则没用了，清除dep里面当前watcher，然后把 newDepIds 和 depIds 交换，newDeps 和 deps 交换，并把 newDepIds 和 newDeps 清空。
-
+  - 派发更新
+    - Dep.notify(), 调用所有的watcher.update()
+    - queueWatcher
+      - 去重复
+    - nextTick(flushScheduleQueue) 在`nextTick`执行时执行所有的watcher。`waiting`通过这个保证只调用一次。(异步更新视图, 解决多操作)
+      - flushScheduleQueue（队列长度发生变化会重新跑当前函数
+        - 队列排序-从小到大，创建就是父<子, 则更新也要先父后子
+        - 遍历后 执行 `watcher.run()`
+      - nextTick
+        - Vue 在内部尝试对异步队列使用原生的 setImmediate 和 MessageChannel 方法，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。以便能在下次tick执行。
+        - callbacks 存储很多，一起执行。
+    - `watcher.run()`
+    - updateComponent
+      - 也会调用`getter`获取值去和旧值对比。所以也会调用(render函数)
 
 # 2. 生命周期
 
@@ -124,14 +137,7 @@
 
 通俗的说：修改数据后，dom树没有立即更新，等dom树更新完成执行。
 
-1. 只要观察到数据变化，Vue 将开启一个队列(`queenWatcher`)，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次,
-2. 会执行`nextTick(flushScheduleQueue)`, 然后 `nextTick` 会把 `flushScheduleQueue` 推入自己内部的cb数组中,
-3. 如果有 `$nextTick` 会把`$nextTick的回调`推入nextTick内部的cb数组中
-   - Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel 方法，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。
-4. nextTick里面的会把数组cb一个一个执行，
-5. watch.run()
-6. updateComponent()
-7. dom 更新 -> Vue.nextTick 获取到改变后的 DOM
+nextTick，在下一次任务执行或者在本次微任务执行，为了解决数据多次改变，而频繁更新视图。统一处理。
 
 # 5. 模板解析
 模版解析分为三个过程 `parse`、`optimize`、`generate`，最终生成render函数。
@@ -230,6 +236,16 @@ AST树
 # 12. computed/ watch 区别 实现
 1. computed 是根据一些计算，计算出来的值，这些值变了，会重新计算。
    1. initState 函数中，创建computed监听器
-   2. 如果有render 会触发getter
-   3. 
+   2. computed watcher 会持有一个 dep 实例
+   3. 如果有render 会触发getter, 会让watcher订阅`computed watcher`
+   4. 调用this.get(), 会让他的子集调用
+   5. 当前target `computed watcher`, 会push到子集dep上面（依赖过程)
+   6. this.dep.notify(),通知watcher
 2. watch 是监听一个变量，这个变量改变的时候，做一堆操作。
+   1. user watcher
+   2. deep watcher -> traverse
+      1. 它实际上就是对一个对象做深层递归遍历，因为遍历过程中就是对一个子对象的访问，会触发它们的 getter 过程，这样就可以收集到依赖，也就是订阅它们变化的 watcher
+   3. sync watcher -> 会立即更新
+
+# 3. keep-alive 实现原理
+

@@ -82,7 +82,7 @@
 - [x] 1. mvvm 的理解 mvc区别
 - [x] 2. 生命周期
 - [x] 3. vm.$set()
-- [ ] 4. nextTick & Vue的数据为什么频繁变化但只会更新一次
+- [x] 4. nextTick & Vue的数据为什么频繁变化但只会更新一次
 - [x] 5. 虚拟dom
 - [x] 6. diff 算法
 - [x] 7. vue3 理解 proxy defineProperty
@@ -90,7 +90,7 @@
 - [x] 9. 前端路由实现 两种方案
 - [x] 10. 路由权限 实现
 - [ ] 11. vuex 理解 如何实现
-- [ ] 12. computed/ watch 区别 实现
+- [x] 12. computed/ watch 区别 实现
 - [ ] 13. keep-alive 实现原理
 - [ ] 14. vue-cli npm 包
 - [ ] 15. extend 写个toast
