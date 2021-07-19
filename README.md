@@ -89,25 +89,29 @@
 - [x] 8. 组件通讯的六种方式
 - [x] 9. 前端路由实现 两种方案
 - [x] 10. 路由权限 实现
-- [ ] 11. vuex 理解 如何实现
+- [x] 11. vuex 理解 如何实现
 - [x] 12. computed/ watch 区别 实现
-- [ ] 13. keep-alive 实现原理
+- [x] 13. keep-alive 实现原理
 - [ ] 14. vue-cli npm 包
 - [ ] 15. extend 写个toast
 - [ ] 16. Vue3 相关
 - [ ] 17. Nuxt SSR 的实现原理?
-- [ ] 18. 和 react 比较
 
 
 ## React
 
-1. hook 常用
-2. fiber
-3. useState 怎么做缓存
-4. 怎么解决 useState 闭包问题
-5. userReducer 和 redux 好在哪
-6. redux 和 mobx
-7. React Hoc/Vue mixins
+1. 生命周期
+2. React中的合成事件是什么？
+3. setState到底是异步还是同步?
+4. React组件通信如何实现?
+5. React如何进行组件/逻辑复用?
+6. fiber
+7. hook 常用
+8.  useState 怎么做缓存
+9.  怎么解决 useState 闭包问题
+10. userReducer 和 redux 好在哪
+11. Vuex、Flux、Redux、Redux-saga、Dva、MobX
+12. Vue 和 react 做比较
 
 ## 工程化
 
