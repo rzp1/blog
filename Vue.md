@@ -184,7 +184,10 @@ AST树
 
 ### 优化
 1. tree diff - 不跨层级对比
-2. component diff - 如果类型不同，但结构相同, shouldComponentUpdate 来可以深度操作.
+2. component diff - 
+   - 同一类型的两个组件，按原策略（层级比较）继续比较Virtual DOM树即可。
+   - 同一类型的两个组件，默认props改变，会重新计算，不论是否使用到，用户 可以通过 `shouldComponentUpdate()` = ture(进行深度diff, 重新render) false(不进行深度diff).
+   - 不同类型的组件, 直接替换。(不同类型很难存在相同的结构)
 3. element diff - 根据key做移动
 
 - 在创建 VNode 时就确定其类型，以及在 mount/patch 的过程中采用位运算来判断一个 VNode 的类型
@@ -233,11 +236,13 @@ AST树
 2. addRoutes
 
 # 11. vuex 理解 如何实现
+- actions 异步，更大自由度(更好的devtools)
+- mutations 同步任务
 # 12. computed/ watch 区别 实现
 1. computed 是根据一些计算，计算出来的值，这些值变了，会重新计算。
    1. initState 函数中，创建computed监听器
    2. computed watcher 会持有一个 dep 实例
-   3. 如果有render 会触发getter, 会让watcher订阅`computed watcher`
+   3. 如果有render 会触发getter, 会让`渲染watcher`订阅`computed watcher`（`computed watcher`如果改变会触发`渲染watcher`)
    4. 调用this.get(), 会让他的子集调用
    5. 当前target `computed watcher`, 会push到子集dep上面（依赖过程)
    6. this.dep.notify(),通知watcher
@@ -247,5 +252,12 @@ AST树
       1. 它实际上就是对一个对象做深层递归遍历，因为遍历过程中就是对一个子对象的访问，会触发它们的 getter 过程，这样就可以收集到依赖，也就是订阅它们变化的 watcher
    3. sync watcher -> 会立即更新
 
-# 3. keep-alive 实现原理
+# 13. keep-alive 实现原理
+
+- keep-alive组件接受三个属性参数：include、exclude、max
+  - include: 包含的组件
+  - exclude: 不包含的组件
+  - max: 最大缓存数量
+- activated, deactivated
+- keep-alive实例会缓存对应组件的VNode,如果命中缓存，直接从缓存对象返回对应VNode
 
