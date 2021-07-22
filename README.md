@@ -100,18 +100,17 @@
 
 ## React
 
-1. 生命周期
-2. React中的合成事件是什么？
-3. setState到底是异步还是同步?
-4. React组件通信如何实现?
-5. React如何进行组件/逻辑复用?
-6. fiber
-7. hook 常用
-8.  useState 怎么做缓存
-9.  怎么解决 useState 闭包问题
-10. userReducer 和 redux 好在哪
-11. Vuex、Flux、Redux、Redux-saga、Dva、MobX
-12. Vue 和 react 做比较
+- [x] 1. 生命周期
+- [x] 2. React中的合成事件是什么？
+- [x] 3. setState到底是异步还是同步?
+- [x] 4. React组件通信如何实现?
+- [x] 5. React如何进行组件/逻辑复用?
+- [ ] 6. fiber
+- [x] 7. hook 常用
+- [x] 8. 怎么解决 useState 闭包问题
+- [x] 9. Vuex、Flux、Redux、Redux-saga、Dva、MobX
+- [x] 10. userReducer 和 redux 好在哪
+- [ ] 11. Vue 和 react 做比较
 
 ## 工程化
 

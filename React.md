@@ -71,3 +71,71 @@
   2. 额外的学习成本
   3. `React.memo`:`React.memo(Component, [areEqual(prevProps, nextProps)]);` 会记忆，如果返回true就使用memo. 不更新。
      1. 和`shouldComponentUpdate` 拿不到(state change)
+
+
+# 6.fiber,  Time Slice, Suspense API
+
+
+# 7. hook 常用
+useState、useEffect、useCallback、useMemo、useRef, 以及自定义hook
+- `useMemo` 相当于 `vue computed`
+- `useCallback(fn, deps)` 相当于 `useMemo(() => fn, deps)`
+
+# 8.怎么解决 useState 闭包问题
+```Javascript
+function App(){
+    const [count, setCount] = useState(1);
+    useEffect(()=>{
+        setInterval(()=>{
+            console.log(count)
+        }, 1000)
+    }, [])
+    function click(){ setCount(2) }
+}
+```
+1. 原因
+   1. `count` 一直为1, 因为set导致render, `useEffect []` 不会执行。
+2. 解决
+   1. [] 加依赖
+   2. 使用ref
+   3. 使用对象(不推荐)
+
+# 9. Flux、Redux、MobX、Vuex、React-redux、Redux-thunk、Redux-saga、Dva
+> https://zhuanlan.zhihu.com/p/53599723
+1. Flux
+   1. 可以为多个`store`,
+   2. `Dispatcher` 触发所有 `store` 的 `action` 修改`state`
+   3. 最原始的 数据管理
+2. Redux
+   1. 单一 `store`
+   2. 每次`Reducer`, 都是赋值`新`的`state`.
+   3. `dispatch`更新，通知`listen`. `subscribe` 订阅 push listens数组里面
+3. MobX
+   1. 单一 `store`
+   2. 可以直接修改`state`
+   3. store里面的state可以修改
+   4. 收集依赖，监听，派发
+4. Vuex
+   1. 单一 `store`
+   2. 不能直接修改`state`, 要通过`mutation`
+   3. 收集依赖，修改, 触发 派发函数
+5. React-redux
+   1. connect 方法把 react和redux链接在一起
+6. Redux-thunk Redux-promise
+   1. 异步中间件, 使`action` 内变成函数。
+7. Redux-saga
+   1. `Generator`函数, 使能异步，可以multify-thread
+8. Dva
+   1. React-redux & Redux-saga结合体
+
+# 10.userReducer 和 redux 好在哪
+> https://zhuanlan.zhihu.com/p/66020264
+- 相同点
+  1. 统一 store 数据管理
+  2. action
+  3. reducer
+- 不同点
+  1. useReducer 不需要依赖注入，上手难度低
+  2. redux 触发state改变，去通知组件，而useReducer 则是一对一触发
+  3. useReducer 不支持 middleware
+
