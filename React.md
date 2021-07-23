@@ -121,6 +121,8 @@ function App(){
    3. 收集依赖，修改, 触发 派发函数
 5. React-redux
    1. connect 方法把 react和redux链接在一起
+   2. Provider: Provider的作用是从最外部封装了整个应用，并向connect模块传递store
+   3. connect: 负责连接React和Redux
 6. Redux-thunk Redux-promise
    1. 异步中间件, 使`action` 内变成函数。
 7. Redux-saga
@@ -139,3 +141,14 @@ function App(){
   2. redux 触发state改变，去通知组件，而useReducer 则是一对一触发
   3. useReducer 不支持 middleware
 
+# 11. Vue 和 react 做比较
+1. 思想
+   1. vue 双向数据流, 语法糖多
+   2. react 单项数据流，语法糖少
+2. 生态
+   1. PC vue 生态没有 react 好 antd
+   2. Wap  开发会比较快。
+3. diff
+   1. vue 优化能更多一些,
+4. vue 轻量化，高性能，快速
+5. react 后台数据量大，fiber 大数据更新。
