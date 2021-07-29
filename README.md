@@ -74,9 +74,6 @@
 - [x] 9. http 缓存 强缓存 协商缓存
 - [x] 10. CDN 应用场景 回源
 - [x] 11. 什么是反向代理？
-## 安全
-1. XSS
-2. CSRF
 ## Vue
 - [x] 1. mvvm 的理解 mvc区别
 - [x] 2. 生命周期
@@ -137,33 +134,25 @@
 - [ ] 21. babel
 - [ ] 22. 如何写babel插件
 ## 性能优化
-1. webpack - loader
-2. webpack - dll
-3. webpack -happypack
-4. webpack - 压缩
-5. tree shaking
-6. scrop hosting
-7. code splitting
-8. 图片 cdn base64 预加载
-9. 缓存
-10. ssr
-11. cdn
-12. 懒加载 preload 预加载
-13. loading 骨架屏幕
-14. web worker
-15. pwa
-
+1. 图片 cdn base64 预加载
+2. 缓存
+3.  ssr
+4.  cdn
+5.  懒加载 preload 预加载
+6.  loading 骨架屏幕
+7.  web worker
+8.  pwa
+## 安全
+1. XSS
+2. CSRF
 ## typeScript
 1. 
 
 ## node
 1. 
 ## 算法
-1. 求数组里面最大连续项的合
-2. 两个大数相加
 
 ## 设计模式
-
 
 ## 业务/其他
 
