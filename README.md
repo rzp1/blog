@@ -77,7 +77,6 @@
 ## 安全
 1. XSS
 2. CSRF
-3. 
 ## Vue
 - [x] 1. mvvm 的理解 mvc区别
 - [x] 2. 生命周期
@@ -105,35 +104,38 @@
 - [x] 3. setState到底是异步还是同步?
 - [x] 4. React组件通信如何实现?
 - [x] 5. React如何进行组件/逻辑复用?
-- [ ] 6. fiber
+- [ ] 6. fiber,  Time Slice, Suspense API
 - [x] 7. hook 常用
 - [x] 8. 怎么解决 useState 闭包问题
 - [x] 9. Vuex、Flux、Redux、Redux-saga、Dva、MobX
 - [x] 10. userReducer 和 redux 好在哪
 - [ ] 11. Vue 和 react 做比较
+- [ ] 12. 受控组件和非受控组件的区别
 
-## 工程化
+## webpack
 
-1. webpack 构建流程
-2. webpack 和 rollup 区别
-3. 分别介绍bundle，chunk，module是什么
-3. loader 常用loader 实现loader的思路（举1，2个
-4. plusgin 常用 plugin 
-5. webpack 热更新
-6. webpack 如何优化性能
-7. weback 打包速度
-8. webpack 构建速度
-7. webpack dll
-8. webpack tree-shaking
-9. webpack scope hosting
-10. babel
-11. 如何写babel插件
-12. ast 树
-13. 模版引擎 mr-cli
-14. 前端发布 - 增量发布 -灰度发布 jenkins docker
-15. git 工作流
-16. 
-
+- [x] 1. webpack 构建流程
+- [x] 2. webpack 和 rollup 区别
+- [x] 3. 分别介绍bundle，chunk，module是什么
+- [x] 4. Loader 和 Plugin
+- [x] 5. Compiler 和 Compilation
+- [x] 6. runtime, manifest
+- [x] 7. loader 常用loader 
+- [ ] 8. 实现loader的思路
+- [x] 9. plusgin 常用 plugin 
+- [ ] 10. 实现plugin的思路
+- [x] 11. source map
+- [x] 12. hash 规则
+- [x] 13. loader执行顺序及原理
+- [x] 14. 代码分割
+- [x] 15. webpack 提高配置效率
+- [x] 16. webpack 热更新
+- [x] 17. webpack dll
+- [x] 18. webpack tree-shaking
+- [ ] 19. webpack scope hosting
+- [x] 20. weback 构建速度(如何优化性能)
+- [ ] 21. babel
+- [ ] 22. 如何写babel插件
 ## 性能优化
 1. webpack - loader
 2. webpack - dll
@@ -154,6 +156,8 @@
 ## typeScript
 1. 
 
+## node
+1. 
 ## 算法
 1. 求数组里面最大连续项的合
 2. 两个大数相加
@@ -168,5 +172,7 @@
 3. 遇到什么难点，是如何解决的
 4. 如何看待前后端
 5. 微前端 理解 与实战
-6. 
+6. hybrid mtjs
+7. git 工作流
+8. 前端发布 - 增量发布 -灰度发布 jenkins docker
 
