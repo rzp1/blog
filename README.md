@@ -101,13 +101,13 @@
 - [x] 3. setState到底是异步还是同步?
 - [x] 4. React组件通信如何实现?
 - [x] 5. React如何进行组件/逻辑复用?
-- [ ] 6. fiber,  Time Slice, Suspense API
+- [x] 6. fiber,  Time Slice, Suspense API
 - [x] 7. hook 常用
 - [x] 8. 怎么解决 useState 闭包问题
 - [x] 9. Vuex、Flux、Redux、Redux-saga、Dva、MobX
 - [x] 10. userReducer 和 redux 好在哪
-- [ ] 11. Vue 和 react 做比较
-- [ ] 12. 受控组件和非受控组件的区别
+- [x] 11. Vue 和 react 做比较
+- [x] 12. 受控组件和非受控组件的区别
 
 ## webpack
 
@@ -136,15 +136,16 @@
 ## 性能优化
 1. 图片 cdn base64 预加载
 2. 缓存
-3.  ssr
-4.  cdn
-5.  懒加载 preload 预加载
-6.  loading 骨架屏幕
-7.  web worker
-8.  pwa
+3. ssr
+4. cdn
+5. 懒加载 preload 预加载
+6. loading 骨架屏幕
+7. web worker
+8. pwa
 ## 安全
-1. XSS
-2. CSRF
+- [x] 1. XSS
+- [x] 2. CSRF
+- [x] 3. SQL 注入
 ## typeScript
 1. 
 

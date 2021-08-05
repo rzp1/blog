@@ -74,13 +74,55 @@
 
 
 # 6.fiber,  Time Slice, Suspense API
-
+1. Fiber 
+  1. 是什么?
+    1. 为了解决层级过深, 更新组件，耗时，页面卡顿
+  2. 具体拆分
+    1. Scheduler 
+      1. 检测 此次 eventloop 有没有中剩余时间, if yes && >=  5ms 执行Reconciler
+        1. requestIdleCallback
+          1. 介绍: 
+            1. 通知主线程，不忙的时候告诉我，我有几个不太忙的事情做。
+          2. 因为有兼容性问题, react 自己实现了一套。
+            1. MessageChannel :  postMessage & onMessage（在下一次eventLoop 执行
+            2. requestAnimationFrame : 获取当前帧开始时间 + 16.66ms  === 当前帧结束时间
+            3. 当前帧结束时间 - 当前帧渲染花费的时间 === 剩余时间
+          3. 新版 5ms eventloop
+    2. Reconciler  将递归变成循环 - 异步可被中断
+      1. 可能因为其他原因被中断
+        1. 当前帧没有剩余时间
+        2. 有其他更高优任务需要先更新
+      2. 导致 componentWill X 废弃, 因为中断，不知道要触发几次。
+      3. 有两套🌲, 互相引用
+        1. workInProgressTree 计算更新, alternate指向fiber树的同等节点。
+        2. fiber🌲 对比树 和真实dom对应
+    3. Renderer
 
 # 7. hook 常用
 useState、useEffect、useCallback、useMemo、useRef, 以及自定义hook
 - `useMemo` 相当于 `vue computed`
 - `useCallback(fn, deps)` 相当于 `useMemo(() => fn, deps)`
-
+  - `re-render` 时不会重新计算
+  - `useCallback` 缓存事件处理函数
+   ```js
+      const renderButton = useCallback(
+         () => (
+               <Button type="link">
+                  {buttonText}
+               </Button>
+         ),
+         [buttonText]    // 当buttonText改变时才重新渲染renderButton
+      );
+   ```
+  - `useMemo` 缓存二次计算的结果
+   ```js
+      // 仅当num改变时才重新计算结果
+      const result = useMemo(() => {
+         for (let i = 0; i < 100000; i++) {
+            (num * Math.pow(2, 15)) / 9;
+         }
+      }, [num]);
+   ```
 # 8.怎么解决 useState 闭包问题
 ```Javascript
 function App(){
@@ -152,3 +194,10 @@ function App(){
    1. vue 优化能更多一些,
 4. vue 轻量化，高性能，快速
 5. react 后台数据量大，fiber 大数据更新。
+
+
+# 12. 
+1. 受控组件
+   1. `onChange={this.handleChange}`
+2. 非受控组件
+   1. `ref={username=>this.username=username}`
