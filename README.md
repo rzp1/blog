@@ -134,23 +134,13 @@
 - [ ] 21. babel
 - [ ] 22. 如何写babel插件
 ## 性能优化
-1. 图片 cdn base64 预加载
-2. 缓存
-3. ssr
-4. cdn
-5. 懒加载 preload 预加载
-6. loading 骨架屏幕
-7. web worker
-8. pwa
 ## 安全
 - [x] 1. XSS
 - [x] 2. CSRF
 - [x] 3. SQL 注入
 ## typeScript
-1. 
 
 ## node
-1. 
 ## 算法
 
 ## 设计模式
