@@ -95,4 +95,4 @@ meta 元素定义的元数据的类型包括以下几种：
 - html 静态`<script>`引入
 - js 动态插入`<script>`
 - `<script defer>`: 异步加载，元素解析完成后执行
-- `<script async>`: 异步加载，但执行时会阻塞元素渲染 
+- `<script async>`: 异步加载，加载完立即执行，执行时会阻塞元素渲染 

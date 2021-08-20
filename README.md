@@ -57,6 +57,8 @@
 - [x] 27.js类型 基础类型和 引用类型
 - [ ] 28.JS bridge
 - [ ] 29.event bus
+- [ ] 30.setTimeout为什么最小只能设置4ms，怎么实现一个0ms的setTimeout?
+- [ ] 
 ## 浏览器 
 - [x] 1. DOM Tree是如何构建的
 - [x] 2. 同源策略 & 如何实现跨域？
@@ -108,6 +110,9 @@
 - [x] 10. userReducer 和 redux 好在哪
 - [x] 11. Vue 和 react 做比较
 - [x] 12. 受控组件和非受控组件的区别
+- [ ] 13. React17 更新了那些内容
+- [ ] 14. Immutable
+- [ ] 15. 
 
 ## webpack
 
@@ -134,11 +139,14 @@
 - [ ] 21. babel
 - [ ] 22. 如何写babel插件
 ## 性能优化
+- [x] 后续有想法在添加
 ## 安全
 - [x] 1. XSS
 - [x] 2. CSRF
 - [x] 3. SQL 注入
 ## typeScript
+1. 实现一个ts Include
+2. 
 
 ## node
 ## 算法
