@@ -196,7 +196,8 @@ function App(){
 5. react 后台数据量大，fiber 大数据更新。
 
 
-# 12. 
+# 12. 受控组件
+> https://segmentfault.com/a/1190000022872991v
 1. 受控组件
    1. `onChange={this.handleChange}`
 2. 非受控组件
