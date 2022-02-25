@@ -261,3 +261,17 @@ AST树
 - activated, deactivated
 - keep-alive实例会缓存对应组件的VNode,如果命中缓存，直接从缓存对象返回对应VNode
 
+# 14. vue 路由动态加载, 组件动态加载.
+- 利用splitChunk 分包, 利用prefetch 实现动态加载.
+```JS
+// Prefetch 告诉浏览器这个资源将来可能需要，但是什么时间加载这个资源是由浏览器来决定的。
+<link href=/public/batman/js/chunk-7027b1c2.3a2ff1e9.js rel=prefetch>
+// preload 是一个声明式 fetch，可以强制浏览器在不阻塞 document 的 onload 事件的情况下请求资源。
+<link href=/public/batman/js/chunk-7027b1c2.3a2ff1e9.js rel=preload>
+```
+
+- 使用
+```JS
+ComponentOpenAi: () => import('@/components/component-open-ai')
+```
+
