@@ -56,7 +56,7 @@ webpack 启动的时候实例化，它在全局是唯一的。可以把他理解
 # 7. loader 常用loader 
 - file-loader: 把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
 - url-loader: 与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值会交给 file-loader 处理，小于阈值时返回文件 base64 形式编码 (处理图片和字体)
-- source-map-loadervv: 加载额外的 Source Map 文件，以方便断点调试
+- source-map-loader: 加载额外的 Source Map 文件，以方便断点调试
 - svg-inline-loader
 - image-loader: 加载并压缩
 - json-loader
