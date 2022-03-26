@@ -7,6 +7,7 @@
 - [x] 3. src和href的区别
 - [x] 4. srcset作用
 - [x] 5. script标签defer和async区别
+- [x] 6. Load 和 DOMContentLoaded 区别
 
 ## CSS 基础
 - [x] 1. 盒模型
@@ -25,7 +26,7 @@
 - [x] 14. 如何实现宽高比固定4 : 3（仅用css）
 - [x] 15. CSS 预处理 Sass/Less
 - [x] 16. CSS动画
-    
+- [x] 17.图层
 
 ## javascript 基础
 - [x] 1.原型/构造函数/实例

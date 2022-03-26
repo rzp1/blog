@@ -189,3 +189,11 @@ CSS预处理器的原理: 是将类 CSS 语言通过 Webpack 编译 转成浏览
   - skew
   - opacity
   - color
+
+# 17.图层
+不同图层渲染互不影响, `注意不要生成过多图层, 性能问题!!!`
+- 3D 变换: `translate3d`, `translateZ`
+- will-change
+- video, iframe 标签
+- opacity 动画转化
+- position: fixed

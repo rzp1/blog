@@ -96,3 +96,7 @@ meta 元素定义的元数据的类型包括以下几种：
 - js 动态插入`<script>`
 - `<script defer>`: 异步加载，元素解析完成后执行
 - `<script async>`: 异步加载，加载完立即执行，执行时会阻塞元素渲染 
+
+# 6. Load 和 DOMContentLoaded 区别
+- Load 事件触发代表页面中的 DOM，CSS，JS，图片已经全部加载完毕。
+- DOMContentLoaded 事件触发代表初始的 HTML 被完全加载和解析，不需要等待 CSS，JS，图片加载。
