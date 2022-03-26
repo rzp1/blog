@@ -192,7 +192,7 @@ AST树
 
 - 在创建 VNode 时就确定其类型，以及在 mount/patch 的过程中采用位运算来判断一个 VNode 的类型
 - Vue 2.x `双端比较` 相比React的Diff算法，同样情况下可以减少移动节点次数，减少不必要的性能损耗，更加的优雅
-- Vue的patch是即时的，并不是打包所有修改最后一起操作DOM（React则是将更新放入队列后集中处理）
+- Vue的patch是即时的，并不是打包所有修改最后一起操作DOM（React则是将更新放入队列后集中处理）(由于现代浏览器有优化, 所以并无太大差别)
 
 ### vu3 diff 优化
 1. “去掉”相同的前置/后置节点
@@ -260,4 +260,18 @@ AST树
   - max: 最大缓存数量
 - activated, deactivated
 - keep-alive实例会缓存对应组件的VNode,如果命中缓存，直接从缓存对象返回对应VNode
+
+# 14. vue 路由动态加载, 组件动态加载.
+- 利用splitChunk 分包, 利用prefetch 实现动态加载.
+```JS
+// Prefetch 告诉浏览器这个资源将来可能需要，但是什么时间加载这个资源是由浏览器来决定的。
+<link href=/public/batman/js/chunk-7027b1c2.3a2ff1e9.js rel=prefetch>
+// preload 是一个声明式 fetch，可以强制浏览器在不阻塞 document 的 onload 事件的情况下请求资源。
+<link href=/public/batman/js/chunk-7027b1c2.3a2ff1e9.js rel=preload>
+```
+
+- 使用
+```JS
+ComponentOpenAi: () => import('@/components/component-open-ai')
+```
 

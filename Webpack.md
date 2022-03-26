@@ -56,7 +56,7 @@ webpack 启动的时候实例化，它在全局是唯一的。可以把他理解
 # 7. loader 常用loader 
 - file-loader: 把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
 - url-loader: 与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值会交给 file-loader 处理，小于阈值时返回文件 base64 形式编码 (处理图片和字体)
-- source-map-loadervv: 加载额外的 Source Map 文件，以方便断点调试
+- source-map-loader: 加载额外的 Source Map 文件，以方便断点调试
 - svg-inline-loader
 - image-loader: 加载并压缩
 - json-loader
@@ -188,7 +188,13 @@ webpack 启动的时候实例化，它在全局是唯一的。可以把他理解
     - 例如`react hoc`很复杂, 如果一个匿名函数被包在一个函数调用中，那么其实这个插件是无法分析的.
 
 # 19. webpack scope hosting
+> https://segmentfault.com/a/1190000018220850
+作用域提升, 
 
+1. 在A文件导出一个字符串，在B文件中引入之后，通过console.log打印出来。
+2. 通过webpack打包构建之后，会发现将这两个文件构建成了两个函数，一个函数内是我们输出的字符串，一个函数内是console.log语句。
+问题：两个函数也就是两个作用域；不仅代码增加了，可读性还不太友好。
+3. 使用scope hosting进行配置处理之后，会讲本身的两个函数作用域合成一个，减少了代码量，也便于阅读代码。
 # 20. weback 构建速度(如何优化性能)
 > 官方文档也很赞
 
