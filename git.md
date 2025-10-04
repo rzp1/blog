@@ -5,3 +5,9 @@
 ```Shell
 git config core.ignorecase false
 ```
+
+## 清除 已经被远程删除的分支
+
+```Shell
+git remote prune origin
+```
